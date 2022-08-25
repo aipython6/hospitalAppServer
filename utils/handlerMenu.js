@@ -5,7 +5,8 @@ const handlerThreeRouter = menus => {
   let tempSecondChildren = []
   menus.forEach(a => {
     if (!a.pid) {
-      Menu.id = ''
+      Menu.id = a.bid
+      Menu.menu_name = a.menu_name
     }
   })
 }
