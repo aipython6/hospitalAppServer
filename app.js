@@ -4,6 +4,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+const cors = require('cors');
+const cors_instance = require('./utils/cors')
+
 const menusRouter = require('./routes/website/menus/website')
 
 
@@ -18,6 +21,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(async (req, res, next) => {
+  const url = req.url
+  const whiteList = ['api/user/login', 'api/nhfyyy']
+  if (whiteList.includes(url)) {
+    return next()
+  } else {
+    const t = req.headers.authorization
+    const username = req.headers.username
+    if (t && username) {
+      next()
+    }
+  }
+})
 
 app.use('/website/menus', menusRouter)
 

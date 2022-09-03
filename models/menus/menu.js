@@ -1,5 +1,18 @@
+// 三级menu
+let third = {
+  id: undefined,
+  pid: undefined,
+  menu_id: undefined,
+  name: '',
+  router: '',
+  disabled: 1,
+  create_at: new Date(),
+  create_by: '',
+  bg_color: ''
+}
+
 // 二级menu
-const second = {
+let second = {
   id: undefined,
   pid: undefined,
   menu_id: undefined,
@@ -14,20 +27,8 @@ const second = {
   ],
 }
 
-// 三级menu
-const third = {
-  id: undefined,
-  pid: undefined,
-  menu_id: undefined,
-  name: '',
-  router: '',
-  disabled: 1,
-  create_at: new Date(),
-  create_by: '',
-  bg_color: ''
-}
 // 最终的menu对象
-const Menu = {
+let Menu = {
   menu_id: undefined,
   name: '',
   english_name: '',
@@ -41,4 +42,4 @@ const Menu = {
   ],
 }
 
-module.exports = Menu
+module.exports = { Menu: Menu, second: second, third: third }

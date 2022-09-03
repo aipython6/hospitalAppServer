@@ -4,8 +4,11 @@ class websiteMenusService {
   constructor() {
     this.websiteMenusImpl = new websiteMenusImpl()
   }
-  get() {
-    return this.websiteMenusImpl.get();
+  getChildrenMenus() {
+    return this.websiteMenusImpl.getChildrenMenus();
+  }
+  getParentMenus() {
+    return this.websiteMenusImpl.getParentMenus()
   }
 }
 
