@@ -8,7 +8,7 @@ router.get('/menus', async (req, res) => {
   const Cmenus = await wms.getChildrenMenus()
   const Pmenus = await wms.getParentMenus()
   const result = handlerThreeRouter(Cmenus, Pmenus)
-  res.json({ content: result })
+  res.json({ code: 200, message: 'success', data: result })
 })
 
 module.exports = router

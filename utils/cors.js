@@ -17,7 +17,7 @@ const cors_instance = new Cors({
   origin: ['http://localhost:8573'],
   // origin: ['https://www.and2ui.cn', 'https://and2ui.cn'],
   optionsSuccessStatus: 200,
-  allowedHeaders: ['Content-Type', 'authorization', 'username']
+  allowedHeaders: ['Content-Type', 'Access-Control-Allow-Origin', '*']
 });
 
 module.exports = cors_instance
